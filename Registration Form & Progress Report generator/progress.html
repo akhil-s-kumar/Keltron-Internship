@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/report.css" />
+    <title>Report Card</title>
+</head>
+
+<body>
+    <div class="flexMain">
+        <div class="flexChild">
+            <div class="head">
+                <h1>Progress Report Generator</h1>
+            </div>
+            <div class="report">
+                <form onsubmit="return report()">
+                    <div class="flex-container">
+                        <div class="inputElement">
+                            <input id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="inputElement">
+                            <input id="registerNo" placeholder="Registration Number">
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="inputElement">
+                            <input id="physics" placeholder="Physics" onchange="return validate()">
+                        </div>
+                        <div class="inputElement">
+                            <input id="chemistry" placeholder="Chemistry" onchange="return validate()">
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="inputElement">
+                            <input id="cs" placeholder="Computer Science" onchange="return validate()">
+                        </div>
+                        <div class="inputElement">
+                            <input id="maths" placeholder="Mathematics" onchange="return validate()">
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="inputElement">
+                            <input id="english" placeholder="English" onchange="return validate()">
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <button class="btn" type="submit">Generate Report</button>
+                    </div>
+                </form>
+                <p id="validation" class="validation"></p>
+            </div>
+        </div>
+        <div class="flexChild">
+            <div class="head">
+                <h1>Result</h1>
+            </div>
+            <div id="reportCard"></div>
+        </div>
+    </div>
+    <script>
+        const report = () => {
+            var name = document.getElementById('name').value;
+            var rno = document.getElementById('registerNo').value;
+            var phy = document.getElementById('physics').value;
+            var che = document.getElementById('chemistry').value;
+            var cs = document.getElementById('cs').value;
+            var mat = document.getElementById('maths').value;
+            var eng = document.getElementById('english').value;
+            let total = parseInt(phy) + parseInt(che) + parseInt(cs) + parseInt(mat) + parseInt(eng);
+            let average = (parseInt(phy) + parseInt(che) + parseInt(cs) + parseInt(mat) + parseInt(eng)) / 5;
+            var status = ""
+            if (parseInt(phy)<50 | parseInt(che)<50 | parseInt(cs)<50 | parseInt(mat)<50 | parseInt(eng)<50){
+                status = "Fail";
+            }else{
+                if (total >= 250 && total <= 300) {
+                    status = "Pass";
+                } else if (total >= 301 && total <= 350) {
+                    status = "3rd Class";
+                } else if (total >= 351 && total <= 400) {
+                    status = "2nd Class";
+                } else if (total >= 401 && total <= 450) {
+                    status = "1st Class";
+                } else if (total >= 451 && total <= 500) {
+                    status = "Distinction";
+                } else {
+                    status = "Fail";
+                }
+            }
+            const report =
+                `
+                <div id="report" class="report">
+                    <img src="./images/logo.png" width="15%">
+                    <h3>Keltron Knowledge Center TVPM</h3>
+                    <div class="flex-container-rep">
+                        <p>Name: <b>${name}</b></p>
+                        <p>Registration Number: <b>${rno}</b></p>
+                    </div>
+                    <div class="flex-container-rep">
+                        <p>Physics: <b>${phy}</b></p>
+                        <p>Chemistry: <b>${che}</b></p>
+                        <p>Computer Science: <b>${cs}</b></p>
+                    </div>
+                    <div class="flex-container-rep">
+                        <p>Mathematics: <b>${mat}</b></p>
+                        <p>English: <b>${eng}</b></p>
+                    </div>
+                    <div class="flex-container-rep">
+                        <p id="totalScore">Total: <b>${total}</b></p>
+                        <p id="averageScore">Average: <b>${average}</b></p>
+                        <p id="status">Status: <b id="statusRes">${status}</b></p>
+                    </div>
+                </div>
+                `
+            document.getElementById('reportCard').innerHTML = report;
+            if (status == "Fail"){
+                document.getElementById("statusRes").classList.add("fail")
+            }else{
+                document.getElementById("statusRes").classList.add("success")
+            }
+            return false
+        }
+
+        const validate = () => {
+            var phy = document.getElementById('physics').value;
+            var che = document.getElementById('chemistry').value;
+            var cs = document.getElementById('cs').value;
+            var mat = document.getElementById('maths').value;
+            var eng = document.getElementById('english').value;
+            if (parseInt(phy) > 100 | parseInt(phy) < 0 | parseInt(che) > 100 | parseInt(che) < 0 | parseInt(cs) > 100 | parseInt(cs) < 0 | parseInt(mat) > 100 | parseInt(mat) < 0 | parseInt(eng) > 100 | parseInt(eng) < 0) {
+                document.getElementById('validation').innerHTML = "Marks can't be greater than 100 or less than 0";
+            } else {
+                document.getElementById('validation').innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

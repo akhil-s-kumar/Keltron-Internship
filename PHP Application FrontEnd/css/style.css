@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FDFCFE;
+}
+
+.navbar .nav-links{
+  display: flex;
+}
+
+.navbar .nav-links li{
+    list-style-type: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar .nav-links li a{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navbar .nav-links li a:hover{
+    color: #FD5E29;
+    transition: 0.5s;
+    border-bottom: 1px solid #FD5E29;
+}
+
+.signupSec{
+    margin-top: 100px;
+}
+
+.card .card-body{
+    background-color: #FFFFFF;
+    box-shadow: 8px 8px 15px 2px #D6D6D6;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 450px;
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.card .card-body h3{
+    text-align: center;
+    font-size: 25px;
+}
+
+.card .card-body form{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.card .card-body form .field-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.card .card-body form .field-flex .field{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card .card-body form .field-flex .buttons{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card .card-body form .field{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card .card-body form .field input{
+    background-color: #FDFCFE;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    border: 1px solid #1E1E1E;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card .card-body form .field input::placeholder{
+    color: #8c8c8c;
+}
+
+.card .card-body form .field input:focus{
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #FD5E29;
+}
+
+.card .card-body form .buttons button{
+    width: 325px;
+    height: 50px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor:pointer;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.card .card-body form .buttons .submit{
+    background-color: #FD5E29;
+    color: #FFFFFF;
+}
+
+.card .card-body form .buttons .reset{
+    background-color: transparent;
+    border: 1px solid #FD5E29;
+    color: #FD5E29;
+}
+
+.registerSec .card .card-body{
+    margin-top: 100px;
+    width: 800px;
+}
+
+.dashboardSec{
+    margin-top: 50px;
+}
+
+.dashboardSec .card .card-body{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.dashboardSec .card .card-body img{
+    width: 40%;
+}
+
+.footer{
+    position:fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: #FBFBFD;
+}
+
+.footer .footer-flex{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}

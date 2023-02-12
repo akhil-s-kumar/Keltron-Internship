@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <div class="head">
+        <h1>Signup now</h1>
+    </div>
+    <div class="registrationForm">
+        <h3>Enjoy the world of entertainment.</h3>
+        <form id="submit-form" method="GET" action="Dashboard.html" onsubmit="return register()">
+            <div class="field">
+                <input name="username" placeholder="Username" id="usernameInput" type="text">
+            </div>
+            <div class="field">
+                <input autocomplete="off" name="password1" placeholder="Password" id="password1Input" type="password">
+            </div>
+            <div class="field">
+                <input autocomplete="off" name="password2" placeholder="Confirm Password" id="password2Input" type="password">
+            </div>
+            <div class="field">
+                <input placeholder="Email" name="email" id="emailInput" type="email">
+            </div>
+            <div class="buttons">
+                <button type="submit" class="submit">SIGN IN</button><br>
+                <button type="reset" class="reset">RESET</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    const register = () =>{
+        var a = document.getElementById("usernameInput").value;
+        var b = document.getElementById("password1Input").value;
+        var c = document.getElementById("password2Input").value;
+        var d = document.getElementById("emailInput").value;
+        if (a == "" | b == "" | c == "" | d == ""){
+            alert("Fields cannot be empty!");
+            return false
+        }
+    }
+</script>
+
+</html>

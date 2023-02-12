@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    background-color: #1A1A1A;
+    font-family: 'Raleway', sans-serif;
+}
+
+.head{
+    text-align: center;
+}
+
+.head h1{
+    color: #FFFFFF;
+    font-size: 50px;
+}
+
+.registrationForm{
+    background-color: #0D0D0D;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 550px;
+    border-radius: 15px;
+    padding-top: 20px;
+}
+
+.registrationForm h3{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.registrationForm form{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.registrationForm form .field{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.registrationForm form .field input{
+    background-color: #333;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.registrationForm form .field input::placeholder{
+    color: #8c8c8c;
+}
+
+.registrationForm form .field input:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.registrationForm form .buttons button{
+    width: 325px;
+    height: 50px;
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 13px;
+    cursor:pointer;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.registrationForm form .buttons .submit{
+    background-color: #F71F1F;
+}
+
+.registrationForm form .buttons .reset{
+    background-color: transparent;
+    border: 1px solid #F71F1F;
+}
